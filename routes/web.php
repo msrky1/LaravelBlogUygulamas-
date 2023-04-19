@@ -21,7 +21,15 @@ Route::get('/test', function () {
     return view('example');
 });
 
+Route::get('/deneme', function () {
+    return view('layouts.base');
+});
+
+
+
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
