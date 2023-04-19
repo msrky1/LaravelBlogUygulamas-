@@ -1,5 +1,5 @@
 <template>
-  <div>Header</div>
+  <div> Blog Detail</div>
 </template>
 
 <script>

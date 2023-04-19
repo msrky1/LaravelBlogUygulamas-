@@ -18,9 +18,11 @@
 
     <!-- App CSS -->
     <link id="theme-style" rel="stylesheet" href="{{asset('admin/assets')}}/css/portal.css" />
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<body class="app">
+<body id="app" class="app">
     <header class="app-header fixed-top">
         <div class="app-header-inner">
             <div class="container-fluid py-2">

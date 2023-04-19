@@ -21,10 +21,6 @@ Route::get('/test', function () {
     return view('example');
 });
 
-Route::get('/deneme', function () {
-    return view('layouts.base');
-});
-
 
 
 
