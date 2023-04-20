@@ -9,7 +9,10 @@
                 >
                     <div class="inner">
                         <div class="app-card-body p-3 p-lg-4">
-                            <h3 class="mb-3">Laravel Blog Admin Panel</h3>
+                            <h3 class="mb-3">
+
+
+                            </h3>
                             <div class="row gx-5 gy-3">
                                 <div class="col-12 col-lg-9">
                                     <div>
@@ -20,7 +23,7 @@
                                 <div class="col-12 col-lg-3">
                                     <a
                                         class="btn app-btn-primary"
-                                        href="/home"
+                                           href="/home"
                                         ><svg
                                             width="1em"
                                             height="1em"
@@ -81,6 +84,8 @@
                         <!--//app-card-->
                     </div>
                     <!--//col-->
+                    
+
 
                     <div class="col-6 col-lg-3">
                         <div class="app-card app-card-stat shadow-sm h-100">
@@ -119,8 +124,12 @@
             </div>
             <!--//container-fluid-->
         </div>
-    </div>
+    </div><router-view/>
     <Footer></Footer>
+
+    
+
+    
 </template>
 
 <script>

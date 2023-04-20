@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,9 @@ use App\Http\Controllers\BlogController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('{any}', function () {
+    return view('example');
+})->where('any','.*');
 
 Route::get('/admin-paneli', function () {
      return view('example'); });
@@ -29,5 +33,5 @@ Route::get('/admin-paneli', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/blog', [BlogController::class, 'Blog']);
+// Route::get('/blog', [BlogController::class, 'Blog']);
 // Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');

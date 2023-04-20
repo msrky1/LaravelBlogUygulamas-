@@ -14,14 +14,13 @@ class BlogController extends Controller
 
 
        
-       $blog = Blog::All();
-       return response()->json($blog);
+          return view('blog.index');
 
     }
 
-    public function show($id)
+    public function show()
     {
-        $blog = Blog::find($id);
+        $blog = Blog::all();
         return response()->json($blog);
     }
 

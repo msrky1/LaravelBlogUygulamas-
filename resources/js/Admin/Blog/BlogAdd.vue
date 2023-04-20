@@ -1,5 +1,5 @@
 <template>
-  <div>Form Page</div>
+  <div>Blog Add</div>
 </template>
 
 <script>

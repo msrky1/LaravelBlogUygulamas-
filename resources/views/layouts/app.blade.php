@@ -22,6 +22,8 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     
     <link id="theme-style" rel="stylesheet" href="{{asset('admin/assets')}}/css/portal.css" />
+ 
+   
     
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- Scripts -->

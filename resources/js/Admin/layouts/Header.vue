@@ -302,7 +302,7 @@
             >&times;</a
           >
           <div class="app-branding">
-            <a class="app-logo" href="index.html"
+            <a class="app-logo" href="/"
               ><img
                 class="logo-icon mr-2"
                 src="admin/assets/images/app-logo.svg"
@@ -316,7 +316,8 @@
             <ul class="app-menu list-unstyled accordion" id="menu-accordion">
               <li class="nav-item">
                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                <a class="nav-link active" href="/">
+                <router-link :to="{ name: 'admin-paneli' }"> 
+                <a class="nav-link active" href="#">
                   <span class="nav-icon">
                     <svg
                       width="1em"
@@ -336,13 +337,14 @@
                       />
                     </svg>
                   </span>
-                  <span class="nav-link-text">Anasayfa</span> </a
-                ><!--//nav-link-->
+                  <span class="nav-link-text">Anasayfa</span>  </a
+                ><!--//nav-link--></router-link>
               </li>
               <!--//nav-item-->
               <li class="nav-item">
                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                <a class="nav-link" href="/blog">
+                <router-link :to="{ name: 'blog' }"> 
+                  <a class="nav-link " href="#">        
                   <span class="nav-icon">
                     <svg
                       width="1em"
@@ -361,8 +363,7 @@
                       />
                     </svg>
                   </span>
-                  <span class="nav-link-text">Blog</span> </a
-                ><!--//nav-link-->
+                  <span class="nav-link-text">Blog</span> </a></router-link> 
               </li>
               <!--//nav-item-->
               <li class="nav-item">
