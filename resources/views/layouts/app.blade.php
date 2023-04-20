@@ -22,13 +22,14 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     
     <link id="theme-style" rel="stylesheet" href="{{asset('admin/assets')}}/css/portal.css" />
+    
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- Scripts -->
     
 </head>
 <body>
     <div id="app">
-        {{-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -80,7 +81,7 @@
                     </ul>
                 </div>
             </div>
-        </nav> --}}
+        </nav> 
 
         <main class="py-4">
             @yield('content')

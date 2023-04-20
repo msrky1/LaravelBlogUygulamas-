@@ -7,11 +7,11 @@
             <i class="fas fa-heart" style="color: #fb866a"></i> by
             <a
               class="app-link"
-              href="http://themes.3rdwavemedia.com"
+              href="/"
               target="_blank"
-              >Xiaoying Riley</a
+              ></a
             >
-            for developers</small
+            Software Developer Mahmut Sarıkaya</small
           >
         </div>
 
