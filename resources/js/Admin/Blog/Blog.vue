@@ -1,5 +1,6 @@
 <template>
     <div class="app-content pt-3 p-md-3 p-lg-4">
+       
         <div class="container-xl">
             <div
                 class="row g-3 mb-4 align-items-center justify-content-between"
@@ -54,12 +55,13 @@
                     aria-labelledby="orders-all-tab"
                 >
                     <div class="app-card app-card-orders-table shadow-sm mb-5">
-						<button type="button" class="btn btn-success">Blog Oluştur</button>
+                        <router-link :to="{ name: 'blog-ekle' }">
+                            <button type="button" class="btn btn-success">
+                                Blog Oluştur
+                            </button>
+                        </router-link>
                         <div class="app-card-body">
-							
                             <div class="table-responsive">
-							
-
                                 <table
                                     class="table app-table-hover mb-0 text-left"
                                 >
@@ -82,7 +84,7 @@
                                             <td class="cell">{{ blog.id }}</td>
                                             <td class="cell">
                                                 <span class="truncate"
-                                                    >{{ blog.id }}
+                                                    >
                                                     {{ blog.title }}</span
                                                 >
                                             </td>
@@ -99,19 +101,16 @@
                                             </td>
 
                                             <td class="cell">
-                                                <a @click="remove(blog)"   class="btn-sm app-btn-secondary"
+                                                <a
+                                                    @click="remove(blog)"
+                                                    class="btn-sm app-btn-secondary"
                                                     href="#"
                                                     >Sil</a
                                                 >
                                             </td>
                                             <td class="cell">
-                                                <a
-                                                    class="btn-sm app-btn-primary"
-                                                    href="#"
-                                                    >Düzenle</a
-                                                >
+                                                <input type="button"   @click="edit(blog) " value="Düzenle" class="btn-sm app-btn-primary" > 
                                             </td>
-											
                                         </tr>
                                     </tbody>
                                 </table>
@@ -121,7 +120,7 @@
                         <!--//app-card-body-->
                     </div>
                     <!--//app-card-->
-                    <nav class="app-pagination">
+                    <!-- <nav class="app-pagination">
                         <ul class="pagination justify-content-center">
                             <li class="page-item disabled">
                                 <a
@@ -145,12 +144,81 @@
                                 <a class="page-link" href="#">Next</a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> -->
                     <!--//app-pagination-->
                 </div>
                 <!--//tab-pane-->
             </div>
             <!--//tab-content-->
+
+            <div class="app-wrapper">
+            <div class="app-content pt-3 p-md-3 p-lg-4">
+              
+                    <div v-if="isActive" class="container-xl">
+                        <h1 class="app-page-title">Blog Yazısını Düzenle</h1>
+                        <hr class="mb-4" />
+                        <div class="row g-4 settings-section">
+                            <div class="col-12 col-md-8">
+                                <div
+                                    class="app-card app-card-settings shadow-sm p-4"
+                                >
+                                    <div class="app-card-body">
+                                        <form
+                                            @submit.prevent="updateBlog()"
+                                            class="settings-form"
+                                        >
+                                            <div class="mb-3">
+                                                <label
+                                                    for="setting-input-2"
+                                                    class="form-label"
+                                                    >Başlık</label
+                                                >
+                                                <input
+                                                    name="title"
+                                                    type="text"
+                                                    class="form-control"
+                                                    v-model="blog.title"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label
+                                                    for="setting-input-3"
+                                                    class="form-label"
+                                                    >İçerik</label
+                                                ><br />
+                                                <textarea
+                                                    name="description"
+                                                    class="form-control"
+                                                    v-model="blog.description"
+                                                    rows="10"
+                                                    cols="50"
+                                                ></textarea>
+                                            </div>
+                                            <button
+                                                type="submit"
+                                                class="btn btn-primary"
+                                            >
+                                                Güncelle
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <!--//app-card-body-->
+                                </div>
+                                <!--//app-card-->
+                        
+                        </div>
+
+                        <!--//row-->
+                        <hr class="my-4" />
+                    </div>
+
+               
+                    <!--//container-fluid-->
+                </div>
+            </div>
+            <!--//app-content-->
+        </div>
         </div>
         <!--//container-fluid-->
     </div>
@@ -170,8 +238,9 @@ export default {
 
                 status: "",
                 created_at: "",
+                
             },
-
+            isActive: false,
             durum: false,
         };
     },
@@ -191,20 +260,35 @@ export default {
             });
         },
 
-		save() {
-            if (this.blog.id == "") {
-                this.saveData();
-            } 
-        },
-
-        saveData() {
+        updateBlog() {
+            var editrecords =
+                "http://localhost:8000/api/update/" + this.blog.id;
             axios
-                .post("http://127.0.0.1:8000/api/save", this.blog)
+                .put(editrecords, this.blog)
+
                 .then(({ data }) => {
-                    alert("Savedd");
-                    this.employeeView();
+                    this.blog.title = "";
+                    this.blog.description = "";
+                    this.user_id = "";
+
+                    alert("updated!!");
+
+                    this.isActive = false;
+                
+
+                    this.blogView();
                 });
         },
+
+        edit(blog) {
+
+            this.blog = blog;
+            this.isActive = true;
+            console.log(this.isActive);
+            
+
+        },
+
 
         remove(blog) {
             var url = "http://localhost:8000/api/delete/" + blog.id;
@@ -217,4 +301,4 @@ export default {
 };
 </script>
 
-<style></style>
+

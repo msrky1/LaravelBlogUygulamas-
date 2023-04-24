@@ -15,12 +15,17 @@ use App\Http\Controllers\BlogController;
 |
 */
 
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
 
 Route::get('/bloglarim' , [BlogController::class, 'show']);
-Route::post('/save' , [BlogController::class, 'store']);
+
+Route::post('/post' , [BlogController::class, 'store']);
 Route::put('/update/{id}' , [BlogController::class, 'update']);
 Route::delete('/delete/{id}' , [BlogController::class, 'delete']);
+
+
+Route::get('/users' , [BlogController::class, 'user']);

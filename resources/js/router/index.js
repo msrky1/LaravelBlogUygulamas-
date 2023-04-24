@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import Blog from '../Admin/Blog/Blog.vue';
 import Home from '../components/Home.vue';
-import BlogAdd from '../Admin/Blog/BlogAdd.vue'
+import BlogAdd from '../Admin/Blog/BlogAdd.vue';
 
 
 

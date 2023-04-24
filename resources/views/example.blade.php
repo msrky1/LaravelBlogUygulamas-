@@ -3,9 +3,14 @@
 
 @section('content')
     <div id="app">
+ 
 
-        <example-component></example-component>
+         @if (Auth::check())
+             
 
+        
+        <example-component :user = "{{Auth::user()}}"></example-component>
+        @endif
 
     </div>
 @endsection

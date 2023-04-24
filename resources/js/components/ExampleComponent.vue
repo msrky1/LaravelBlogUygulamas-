@@ -140,5 +140,13 @@ export default {
         Header,
         Footer,
     },
+
+    props: ['user'],
+
+    created() {
+
+        
+            console.log(this.user);
+        },
 };
 </script>
