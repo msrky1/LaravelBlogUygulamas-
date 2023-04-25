@@ -4,13 +4,14 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Blog;
+use Carbon\Carbon;
 
 class HomeComponent extends Component
 {
     public function render()
     {
 
-        // $blog = Blog::orderBy('DESC' , 'created_at');
-        return view('livewire.home-component' );
+        $blog = Blog::orderBy('created_at' , 'ASC')->get();
+        return view('livewire.home-component' , ['blog' => $blog] )->layout('layouts.blog');
     }
 }

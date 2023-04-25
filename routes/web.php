@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\Blog\BlogDetailComponent;
 
 
 
@@ -25,16 +27,23 @@ Route::get('/', function () {
 //     return view('example');
 // })->where('any','.*');
 
+
+
+
+
 Route::get('/admin-paneli', function () {
-     return view('example'); });
-
-
+    return view('example'); });
 
 
 
 Auth::routes();
 
+
+Route::post('/post' , [BlogController::class, 'store']);
+
+Route::post('/comment' , [CommentController::class, 'comment'])->name('comment');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/blog-list', [HomeComponent::class]);
+Route::get('/blog-list' , HomeComponent::class);
+Route::get('/blog/detay/{slug}', BlogDetailComponent::class)->name('blog.detail');
 // Route::get('/blog', [BlogController::class, 'Blog']);
 // Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');

@@ -366,7 +366,8 @@
                   <span class="nav-link-text">Blog</span> </a></router-link> 
               </li>
               <!--//nav-item-->
-              <li class="nav-item">
+              
+              <li class="nav-item" >
                 <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                 <a class="nav-link" href="orders.html">
                   <span class="nav-icon">
@@ -432,7 +433,26 @@
 
 <script>
 export default {
+  
+   props: ['user'],
 
+   data() {
+
+    return {
+
+        
+       users: [],
+
+    }
+
+    
+   },
+
+   created() {
+     
+     this.user = users;
+     console.log(users);
+   },
 }
 </script>
 

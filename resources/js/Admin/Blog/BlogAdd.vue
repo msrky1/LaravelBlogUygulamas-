@@ -7,7 +7,7 @@
                 <div class="row g-4 settings-section">
                     <div class="col-12 col-md-4">
                         <h3 class="section-title">
-                            Bu Kısımdan Blog Yazısı Ekleyebilirsiniz
+                            Bu Kısımdan Blog Yazısı Ekleyebilirsiniz 
                         </h3>
                         <!-- <div class="section-intro">Settings section intro goes here. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit. <a href="/help">Learn more</a></div> -->
@@ -23,7 +23,7 @@
                                         <label
                                             for="setting-input-2"
                                             class="form-label"
-                                            >Başlık</label
+                                            >Başlık </label
                                         >
                                         <input
                                             name="title"
@@ -51,10 +51,11 @@
                                         type="submit"
                                         class="btn btn-primary"
                                     >
-                                        Kaydet
+                                        Kaydet 
                                     </button>
+                                   
                                 </form>
-
+                          
                             
                             </div>
                             <!--//app-card-body-->
@@ -63,51 +64,54 @@
                     </div>
                 </div>
                 <!--//row-->
-                <hr class="my-4" />
+                <hr class="my-4" /> 
             </div>
             <!--//container-fluid-->
         </div>
         <!--//app-content-->
     </div>
-
+    
+     
   
     <!--//app-wrapper-->
 </template>
 
 <script>
-
+    
 export default {
     name: "blog-ekle",
+     
 
+ 
+    
     //   components: {
     //      Main
 
     //   },
-
+   
     data() {
         return {
             result: {},
 
-           props: ['user'],
+        
 
             blog: {
                 title: "",
                 description: "",
+                slug: "",
+                
+               
                 
             },
 
-            user: {
-
-                userName: "",
-                userId: ""
-            },
+           
 
             durum: false,
         };
     },
     created() {
-            console.log(this.user);
-        },
+       
+    },
     methods: {
 
        
@@ -116,7 +120,7 @@ export default {
         },
         saveData() {
             axios
-                .post("./api/post", this.blog)
+                .post("./post", this.blog)
                 .then(({ data }) => {
                     alert("Blog Kaydedildi");
                 })

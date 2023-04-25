@@ -56,7 +56,7 @@
                 >
                     <div class="app-card app-card-orders-table shadow-sm mb-5">
                         <router-link :to="{ name: 'blog-ekle' }">
-                            <button type="button" class="btn btn-success">
+                            <button  type="button" class="btn btn-success">
                                 Blog Oluştur
                             </button>
                         </router-link>
@@ -68,6 +68,7 @@
                                     <thead>
                                         <tr>
                                             <th class="cell">id</th>
+                                            <th class="cell">userId</th>
                                             <th class="cell">Başlık</th>
                                             <th class="cell">İçerik</th>
                                             <th class="cell">Tarih</th>
@@ -82,6 +83,7 @@
                                             :key="blog.id"
                                         >
                                             <td class="cell">{{ blog.id }}</td>
+                                            <td class="cell">{{ blog.user_id }}</td>
                                             <td class="cell">
                                                 <span class="truncate"
                                                     >
@@ -222,11 +224,14 @@
         </div>
         <!--//container-fluid-->
     </div>
+    <!-- <blog-add :users = "user"/> -->
 </template>
 
 <script>
+
 export default {
     name: "blog",
+  
 
     data() {
         return {
@@ -235,6 +240,7 @@ export default {
             blog: {
                 title: "",
                 description: "",
+                user_id: "",
 
                 status: "",
                 created_at: "",
@@ -250,6 +256,8 @@ export default {
     },
 
     methods: {
+
+       
         blogView() {
             let page = "http://localhost:8000/api/bloglarim";
 
@@ -259,6 +267,8 @@ export default {
                 this.result = data;
             });
         },
+
+       
 
         updateBlog() {
             var editrecords =

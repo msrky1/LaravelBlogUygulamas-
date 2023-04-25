@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Auth;
+
 class BlogController extends Controller
 {
     
@@ -24,11 +26,7 @@ class BlogController extends Controller
         return response()->json($blog);
     }
  
-    public function user()
-    {
-        dd(Auth::user());
-    }
-
+  
 
 
     public function update(Request $request , $id)
@@ -48,18 +46,21 @@ class BlogController extends Controller
     public function store(Request $request)
     {
 
-        //  $user_id = Auth::user()->id;
+      
+           $title = $request->title;
+           $description = $request->description;
+           $user_id = auth::user()->id;
+           $slug = Str::slug($title , '-');
+           
+      
           
-            $blog = new Blog([
-
-
-                'title' => $request->input('title'),
-                'description' => $request->input('description'),
-                'user_id' => $request->input('user_id'),
-
-            ]);
-
-
+           $blog = new Blog(); 
+           
+           $blog->title = $title;
+           $blog->description = $description;
+           $blog->slug =  $slug;
+           $blog->user_id = $user_id;
+           
                    
             $blog->save();
             return response()->json('Blog Created');
