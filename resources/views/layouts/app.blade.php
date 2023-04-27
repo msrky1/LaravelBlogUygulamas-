@@ -24,13 +24,13 @@
     <link id="theme-style" rel="stylesheet" href="{{asset('admin/assets')}}/css/portal.css" />
  
    
-    
+     
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <!-- Scripts -->
     
 </head>
 <body>
-    <div id="app">
+    <div >
          <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

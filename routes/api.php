@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +29,11 @@ Auth::routes();
 
 Route::get('/bloglarim' , [BlogController::class, 'show']);
 
+Route::get('/user' , [UserController::class, 'show']);
+
 
 Route::put('/update/{id}' , [BlogController::class, 'update']);
+Route::put('/user/{id}' , [UserController::class, 'update']);
 Route::delete('/delete/{id}' , [BlogController::class, 'delete']);
 
 

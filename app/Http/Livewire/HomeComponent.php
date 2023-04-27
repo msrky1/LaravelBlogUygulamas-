@@ -4,10 +4,16 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Blog;
+
 use Carbon\Carbon;
+use Auth;
 
 class HomeComponent extends Component
 {
+
+    
+  
+   
     public function render()
     {
 

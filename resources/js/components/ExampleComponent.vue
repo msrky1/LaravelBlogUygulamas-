@@ -1,5 +1,5 @@
 <template>
-    <Header :user="user"></Header>
+    <Header :users = "user"></Header>
     <div class="app-wrapper">
         <div class="app-content pt-3 p-md-3 p-lg-4">
             <div class="container-xl">
@@ -16,7 +16,7 @@
                             <div class="row gx-5 gy-3">
                                 <div class="col-12 col-lg-9">
                                     <div>
-                                       Laravel Blog Uygulaması 
+                                       Laravel Blog Uygulaması | {{ user.name }}
                                     </div>
                                 </div>
                                 <!--//col-->
@@ -58,7 +58,7 @@
                 <div class="row g-4 mb-4">
                     <div class="col-6 col-lg-3">
                         <div class="app-card app-card-stat shadow-sm h-100">
-                            <div class="app-card-body p-3 p-lg-4">
+                            <!-- <div class="app-card-body p-3 p-lg-4">
                                 <h4 class="stats-type mb-1">Toplam Blog</h4>
                                 <div class="stats-figure">Blog Sayısı</div>
                                 <div class="stats-meta text-success">
@@ -77,7 +77,7 @@
                                     </svg>
                                    Blog Sayısı 
                                 </div>
-                            </div>
+                            </div> -->
                             <!--//app-card-body-->
                             <a class="app-card-link-mask" href="#"></a>
                         </div>
@@ -116,14 +116,40 @@ import Footer from "../Admin/layouts/Footer.vue";
 export default {
 
     props: ['user'],
+
+    data() {
+        
+         return {
+
+
+              users: { status: "", id:''}
+
+              
+
+      
+         }
+
+    },
     components: {
         Header,
         Footer,
        
+
+
        
     },
 
+    created() {
 
+  
+        this.users.status = this.user.status,
+        this.users.id = this.user.id,
+     
+        console.log(this.users);
+    }
+
+
+   
 
       
 

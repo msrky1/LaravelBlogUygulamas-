@@ -11,8 +11,11 @@
         
         <example-component :user = "{{Auth::user()}}"></example-component>
        
+
+         
        
         @endif
-
+       
     </div>
+
 @endsection

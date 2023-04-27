@@ -22,7 +22,12 @@ class BlogController extends Controller
 
     public function show()
     {
-        $blog = Blog::all();
+
+        
+            $blog = Blog::all();
+       
+     
+              
         return response()->json($blog);
     }
  

@@ -26,6 +26,6 @@ class HomeController extends Controller
     {
 
         // dd(Auth::user()->id); 
-        return view('home');
+        return redirect()->back();
     }
 }

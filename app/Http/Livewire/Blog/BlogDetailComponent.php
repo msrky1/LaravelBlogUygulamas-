@@ -6,25 +6,50 @@ use Livewire\Component;
 use Carbon\Carbon;
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Like;
 class BlogDetailComponent extends Component
 {
 
     public $slug;
  
-
+    public $like;
+    public $blog_id;
+    public $user_id;
  
     
 
 
-    public function mount($slug) {
+    public function mount($slug ) {
 
 
         $this->$slug = $slug;
+
+      
      
       
        
     }
 
+
+   
+
+   
+
+    public function blogLike() {
+
+             
+        $like = new Like();
+
+        $like->blog_id = blog_id;
+        $like->user_id = auth::user()->id;
+        $like->like = 1;
+
+        $like->save();
+
+        return redirect()->back();
+
+
+   }
 
 
     public function render()

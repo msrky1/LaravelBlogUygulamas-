@@ -40,11 +40,18 @@
                                     <h2 class="mt-3 mb-4"><a href="blog-single.html">{{$blog->title}}</a>
                                     </h2>
                                     <p class="lead mb-4">{{$blog->description}}</p>
+                                      <form action="{{route('like')}}" wire:submit.prevent ="blogLike" method="post" > 
+                                        @csrf
+                                        <input type="hidden" value="{{ $blog->id }}" wire:ignore wire:model = "blog_id">
+                                  <button >    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                      </svg>
 
-                                   
-
+                                    </button>
+                                      </form>
                                     
                                 </div>
+                               
                             </div>
                         </div>
 
@@ -54,6 +61,8 @@
                         <div class="col-lg-12 mb-5">
                             <div class="comment-area card border-0 p-5">
                                 <h4 class="mb-4">Toplam Yorum: {{$blog->comments()->count()}}
+
+
                              
                                  
          
@@ -78,6 +87,9 @@
                                             <div class="comment-content mt-3">
                                                 <p>   {{ $con->body }} </p>
                                             </div>
+
+                                          
+
                                         </div>
                                     </li>
                                     @endforeach

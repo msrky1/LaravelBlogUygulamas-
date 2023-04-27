@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Blog from '../Admin/Blog/Blog.vue';
 import Home from '../components/Home.vue';
 import BlogAdd from '../Admin/Blog/BlogAdd.vue';
+import User from '../Admin/Users/User.vue';
+import Login from '../Admin/Auth/Login.vue';
 
 
 
@@ -18,6 +20,17 @@ const routes = [
 
 
  },
+
+ {
+
+
+
+   path: '/login',
+   name: 'Login',
+   component: Login
+
+
+},
 
  
  {
@@ -38,6 +51,16 @@ const routes = [
    path: '/blog-ekle',
    name: 'blog-ekle',
    component: BlogAdd
+
+
+},
+{
+
+
+
+   path: '/users',
+   name: 'users',
+   component: User
 
 
 }

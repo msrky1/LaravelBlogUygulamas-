@@ -6,6 +6,7 @@ use App\Http\Controllers\CommentController;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\Blog\BlogDetailComponent;
 
+use App\Http\Controllers\API\AuthController;
 
 
 
@@ -20,9 +21,9 @@ use App\Http\Livewire\Blog\BlogDetailComponent;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('example');
+// });
 // Route::get('{any}', function () {
 //     return view('example');
 // })->where('any','.*');
@@ -37,13 +38,17 @@ Route::get('/admin-paneli', function () {
 
 
 Auth::routes();
-
+Route::post('/auth/login' , [AuthController::class, 'login'])->name('auth.login');
 
 Route::post('/post' , [BlogController::class, 'store']);
 
-Route::post('/comment' , [CommentController::class, 'comment'])->name('comment');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::post('/comment' , [CommentController::class, 'comment'])->name('comment');
+Route::post('/like' , [BlogDetailComponent::class, 'blogLike'])->name('like');
 Route::get('/blog-list' , HomeComponent::class);
+Route::get('/' , HomeComponent::class);
 Route::get('/blog/detay/{slug}', BlogDetailComponent::class)->name('blog.detail');
 // Route::get('/blog', [BlogController::class, 'Blog']);
 // Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');

@@ -253,13 +253,14 @@ export default {
 
     created() {
         this.blogView();
+        console.log(this.result)
     },
 
     methods: {
 
        
         blogView() {
-            let page = "http://localhost:8000/api/bloglarim";
+            let page = "http://localhost:8000/api/bloglarim/";
 
             axios.get(page).then(({ data }) => {
                 console.log(data);

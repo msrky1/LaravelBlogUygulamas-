@@ -22,7 +22,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<body id="app" class="app">
+<body  class="app">
     <header class="app-header fixed-top">
         <div class="app-header-inner">
             <div class="container-fluid py-2">
@@ -485,6 +485,7 @@
     @yield('content')
     <!--//app-wrapper-->
 
+    <script src="{{asset('admin/assets')}}/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- Javascript -->
     <script src="{{asset('admin/assets')}}/plugins/popper.min.js"></script>
     <script src="{{asset('admin/assets')}}/plugins/bootstrap/js/bootstrap.min.js"></script>
