@@ -27,9 +27,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Auth::routes();
 
-Route::get('/bloglarim' , [BlogController::class, 'show']);
 
-Route::get('/user' , [UserController::class, 'show']);
+// Route::get('/bloglarim' , [BlogController::class, 'show']);
+Route::get('/user/blog/{id}' , [BlogController::class, 'show']);
+
 
 
 Route::put('/update/{id}' , [BlogController::class, 'update']);
@@ -37,4 +38,4 @@ Route::put('/user/{id}' , [UserController::class, 'update']);
 Route::delete('/delete/{id}' , [BlogController::class, 'delete']);
 
 
-Route::get('/users' , [BlogController::class, 'user']);
+Route::get('/user' , [UserController::class, 'show']);

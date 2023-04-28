@@ -36,13 +36,15 @@ Route::get('/admin-paneli', function () {
     return view('example'); });
 
 
-
 Auth::routes();
 Route::post('/auth/login' , [AuthController::class, 'login'])->name('auth.login');
 
 Route::post('/post' , [BlogController::class, 'store']);
 
+Route::get('/user/data' , [BlogController::class , 'userdata']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 
 Route::post('/comment' , [CommentController::class, 'comment'])->name('comment');

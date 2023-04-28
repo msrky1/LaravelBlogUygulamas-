@@ -144,7 +144,7 @@ export default {
   
         this.users.status = this.user.status,
         this.users.id = this.user.id,
-     
+       
         console.log(this.users);
     }
 

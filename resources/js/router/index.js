@@ -8,13 +8,14 @@ import Login from '../Admin/Auth/Login.vue';
 
 
 
+ 
 const routes = [
     
     {
 
 
 
-    path: '/blog',
+    path: '/blog/:id',
     name: 'blog',
     component: Blog
 

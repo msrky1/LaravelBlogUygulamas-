@@ -20,15 +20,30 @@ class BlogController extends Controller
 
     }
 
-    public function show()
+    public function show($id)
     {
+ 
+   
+        $user = User::find($id);
 
-        
-            $blog = Blog::all();
+        $alluser= $user->blogs()->get();
+
+        return response()->json($alluser);
        
      
-              
-        return response()->json($blog);
+    }
+
+    public function userdata()
+    {
+ 
+   
+        
+        $data  = auth::user();
+        
+  
+        return response()->json($data);
+       
+     
     }
  
   

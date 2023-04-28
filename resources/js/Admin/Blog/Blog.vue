@@ -56,7 +56,7 @@
                 >
                     <div class="app-card app-card-orders-table shadow-sm mb-5">
                         <router-link :to="{ name: 'blog-ekle' }">
-                            <button  type="button" class="btn btn-success">
+                            <button type="button" class="btn btn-success">
                                 Blog Oluştur
                             </button>
                         </router-link>
@@ -68,7 +68,7 @@
                                     <thead>
                                         <tr>
                                             <th class="cell">id</th>
-                                            <th class="cell">userId</th>
+                                          
                                             <th class="cell">Başlık</th>
                                             <th class="cell">İçerik</th>
                                             <th class="cell">Tarih</th>
@@ -83,7 +83,7 @@
                                             :key="blog.id"
                                         >
                                             <td class="cell">{{ blog.id }}</td>
-                                            <td class="cell">{{ blog.user_id }}</td>
+                                           
                                             <td class="cell">
                                                 <span class="truncate"
                                                     >
@@ -94,9 +94,9 @@
                                                 {{ blog.description }}
                                             </td>
                                             <td class="cell">
-                                                <span>{{
-                                                    blog.created_at
-                                                }}</span
+                                                <span>
+                       {{ blog.created_at || formatDate }}
+                                              </span
                                                 ><span class="note">{{
                                                     blog.status
                                                 }}</span>
@@ -231,8 +231,8 @@
 
 export default {
     name: "blog",
-  
-
+    
+     
     data() {
         return {
             result: {},
@@ -246,21 +246,32 @@ export default {
                 created_at: "",
                 
             },
+            user: {
+
+                id:'',
+            },
             isActive: false,
             durum: false,
         };
     },
 
     created() {
+        
+
+        this.user.id =  this.$route.params.id;
+     
         this.blogView();
-        console.log(this.result)
+  
+       
     },
+
+
 
     methods: {
 
        
         blogView() {
-            let page = "http://localhost:8000/api/bloglarim/";
+            let page = "http://localhost:8000/api/user/blog/" + this.$route.params.id;
 
             axios.get(page).then(({ data }) => {
                 console.log(data);
@@ -270,7 +281,7 @@ export default {
         },
 
        
-
+     
         updateBlog() {
             var editrecords =
                 "http://localhost:8000/api/update/" + this.blog.id;

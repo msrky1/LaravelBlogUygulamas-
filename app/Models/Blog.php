@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Comment;
+use App\Models\Like;
+
 
 class Blog extends Model
 {
@@ -26,11 +28,7 @@ class Blog extends Model
 
     }
   
-     public function likedBy(user $user) {
-
-        return $this->likes()->contains('user_id' , $user->id);
-     }
-
+   
     public function user() {
 
 
@@ -41,5 +39,6 @@ class Blog extends Model
 
 
         return $this->hasMany(Like::class);
-}
+
+    }
 }

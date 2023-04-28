@@ -56,7 +56,7 @@
                                    
                                 </form>
                           
-                            
+                             
                             </div>
                             <!--//app-card-body-->
                         </div>
@@ -77,11 +77,16 @@
 </template>
 
 <script>
-    
+import axios from "axios";
+
 export default {
     name: "blog-ekle",
      
+  components: {
+       
+    axios,
 
+  },
  
     
     //   components: {
@@ -91,7 +96,7 @@ export default {
    
     data() {
         return {
-            result: {},
+            user: {},
 
         
 
@@ -110,22 +115,39 @@ export default {
         };
     },
     created() {
+
+         
+   this.blogView();
        
-    },
+
+   console.log(this.result)
+
+    }, 
+   
+ 
     methods: {
 
-       
+        blogView() {
+            let page = "http://localhost:8000/user/data" ;
+
+            axios.get(page).then(({ data }) => {
+                console.log(data);
+
+                this.user = data;
+            });
+        },
+      
         save() {
             this.saveData();
         },
         saveData() {
             axios
-                .post("./post", this.blog)
+                .post("./post" , this.blog)
                 .then(({ data }) => {
                     alert("Blog Kaydedildi");
                 })
                 .then((response) => {
-                    this.$router.push({ name: "blog" }).catch((error) => {
+                    this.$router.push({ name: "blog" , params: {id: this.user.id}}).catch((error) => {
                         console.log(error + "Blog Oluşturulamadı.");
                     });
                 });

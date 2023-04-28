@@ -1,7 +1,5 @@
 ﻿/*=== MEDIA QUERY ===*/
-@import url(./css);
-@import url(./css-1);
-@import url(./css-2);
+
 html {
   overflow-x: hidden;
 }
