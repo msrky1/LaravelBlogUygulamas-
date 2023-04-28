@@ -100,7 +100,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="copyright">
-                            &copy; Laravel Blog <span class="text-color">Uygulası</span>
+                            &copy; Laravel Blog <span class="text-color">Uygulaması</span>
                         </div>
                     </div>
 

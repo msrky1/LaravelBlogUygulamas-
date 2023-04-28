@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Blog from '../Admin/Blog/Blog.vue';
 import Home from '../components/Home.vue';
 import BlogAdd from '../Admin/Blog/BlogAdd.vue';
+import BlogAll from '../Admin/Blog/AllBlog.vue';
 import User from '../Admin/Users/User.vue';
 import Login from '../Admin/Auth/Login.vue';
 
@@ -21,6 +22,16 @@ const routes = [
 
 
  },
+ {
+
+
+
+   path: '/blog/all',
+   name: 'blog-all',
+   component: BlogAll
+
+
+},
 
  {
 

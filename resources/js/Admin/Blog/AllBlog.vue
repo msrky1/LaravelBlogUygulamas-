@@ -1,11 +1,11 @@
 <template>
-    <div class="app-content pt-3 p-md-3 p-lg-4">
+  <div class="app-content pt-3 p-md-3 p-lg-4">
         <div class="container-xl">
             <div
                 class="row g-3 mb-4 align-items-center justify-content-between"
             >
                 <div class="col-auto">
-                    <h1 class="app-page-title mb-0">Blog Yazılarım</h1>
+                    <h1 class="app-page-title mb-0">Tüm Bloglar</h1>
                 </div>
                 <div class="col-auto">
                     <div class="page-utilities">
@@ -32,7 +32,7 @@
             </div>
             <!--//row-->
 
-          
+       
 
             <div class="tab-content" id="orders-table-tab-content">
                 <div
@@ -234,19 +234,13 @@
         </div>
         <!--//container-fluid-->
     </div>
-    <!-- <blog-add :users = "user"/> -->
 </template>
 
 <script>
-
 export default {
-    name: "blog",
-  
-   
-         data() {
+    data() {
         return {
             result: {},
-         
 
             blog: {
                 title: "",
@@ -258,30 +252,21 @@ export default {
             user: {
                 id: "",
             },
-           
             isActive: false,
             durum: false,
         };
     },
 
-    created() {
-        this.user.id = this.$route.params.id;
+ created() {
 
-        
-        
-        this.blogView();
-       
-       
-        
-        
-    
-      
-    },
+     this.allBlog();
+     
 
+ },
     methods: {
-        blogView() {
+        allBlog() {
             let page =
-                "http://localhost:8000/api/user/blog/" + this.$route.params.id;
+                "http://localhost:8000/api/all/blog/";
 
             axios.get(page).then(({ data }) => {
                 console.log(data);
@@ -289,7 +274,7 @@ export default {
                 this.result = data;
             });
         },
-    
+
         updateBlog() {
             var editrecords =
                 "http://localhost:8000/api/update/" + this.blog.id;
@@ -306,7 +291,7 @@ export default {
 
                     this.isActive = false;
 
-                    this.blogView();
+                    this.allBlog();
                 });
         },
 
@@ -321,8 +306,12 @@ export default {
 
             axios.delete(url);
 
-            this.blogView();
+            this.allBlog();
         },
     },
-};
+}
 </script>
+
+<style>
+
+</style>

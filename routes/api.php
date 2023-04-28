@@ -30,6 +30,7 @@ Auth::routes();
 
 // Route::get('/bloglarim' , [BlogController::class, 'show']);
 Route::get('/user/blog/{id}' , [BlogController::class, 'show']);
+Route::get('/all/blog' , [BlogController::class, 'allblog']);
 
 
 

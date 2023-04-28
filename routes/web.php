@@ -24,9 +24,7 @@ use App\Http\Controllers\API\AuthController;
 // Route::get('/', function () {
 //     return view('example');
 // });
-// Route::get('{any}', function () {
-//     return view('example');
-// })->where('any','.*');
+
 
 
 
@@ -54,3 +52,6 @@ Route::get('/' , HomeComponent::class);
 Route::get('/blog/detay/{slug}', BlogDetailComponent::class)->name('blog.detail');
 // Route::get('/blog', [BlogController::class, 'Blog']);
 // Route::get('/admin', [App\Http\Controllers\HomeController::class, 'admin'])->name('admin');
+Route::get('{any}', function () {
+    return view('example');
+})->where('any','.*');

@@ -6,6 +6,8 @@ use Livewire\Component;
 use App\Models\Blog;
 
 use Carbon\Carbon;
+use DateTime;
+
 use Auth;
 
 class HomeComponent extends Component
@@ -16,8 +18,11 @@ class HomeComponent extends Component
    
     public function render()
     {
+        $tmp = (new DateTime)->format('Y-m-d'); 
+        
         Carbon::setLocale('tr');
-        $blog = Blog::orderBy('created_at' , 'ASC')->get();
-        return view('livewire.home-component' , ['blog' => $blog] )->layout('layouts.blog');
+        
+        $blog = Blog::orderBy('created_at' , 'DESC')->where('date' ,  '<=' , $tmp)->get();
+        return view('livewire.home-component' , ['blog' => $blog , 'tmp' => $tmp] )->layout('layouts.blog');
     }
 }

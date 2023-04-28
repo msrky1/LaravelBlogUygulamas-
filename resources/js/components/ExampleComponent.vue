@@ -23,7 +23,7 @@
                                 <div class="col-12 col-lg-3">
                                     <a
                                         class="btn app-btn-primary"
-                                           href="/home"
+                                           href="/"
                                         ><svg
                                             width="1em"
                                             height="1em"

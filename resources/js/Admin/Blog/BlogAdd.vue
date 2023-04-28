@@ -47,6 +47,21 @@
                                             cols="50"
                                         ></textarea>
                                     </div>
+                                    <div class="mb-3">
+                                        <label
+                                            for="setting-input-3"
+                                            class="form-label"
+                                            >Yayınlama Tarihi</label
+                                        ><br />
+                                        <input
+                                            name="title"
+                                            type="date"
+                                            class="form-control"
+                                            v-model="blog.date"
+                                            required
+                                        />
+                                    </div>
+                              
                                     <button
                                         type="submit"
                                         class="btn btn-primary"
@@ -79,12 +94,14 @@
 <script>
 import axios from "axios";
 
+
 export default {
     name: "blog-ekle",
      
   components: {
        
     axios,
+  
 
   },
  
@@ -103,6 +120,7 @@ export default {
             blog: {
                 title: "",
                 description: "",
+                date: "",
                 slug: "",
                 
                

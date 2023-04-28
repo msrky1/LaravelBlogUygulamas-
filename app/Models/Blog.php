@@ -15,7 +15,7 @@ class Blog extends Model
 {
     protected $table = 'blogs';
     protected $primaryKey = 'id';
-    protected $fillable = ['title', 'description' , 'slug'];
+    protected $fillable = ['title', 'description' , 'slug' , 'date'];
 
 
 

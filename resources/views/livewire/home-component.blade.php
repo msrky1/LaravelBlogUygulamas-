@@ -15,7 +15,7 @@
                             <span class="text-white">Tüm Bloglar</span>
                             <h1 class="text-capitalize mb-4 text-lg">Laravel Blog Uygulaması</h1>
                             <ul class="list-inline">
-                                <li class="list-inline-item"><a href="index.html" class="text-white">Anasayfa</a></li>
+                                <li class="list-inline-item"><a href="/" class="text-white">Anasayfa</a></li>
                                 <li class="list-inline-item"><span class="text-white">/</span></li>
                                 <li class="list-inline-item"><a href="#" class="text-white-50">Blog Yazıları</a>
                                 </li>
@@ -39,11 +39,16 @@
                                         <div class="blog-item-meta bg-gray py-1 px-2">
                                             {{-- <span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>Creativity</span> --}}
                                             <span class="text-muted text-capitalize mr-3"><i
-                                                    class="ti-comment mr-2"></i>Yorumlar</span>
+                                                    class="ti-comment mr-2"></i>Yorumlar: {{ $item->comments()->count()}}</span>
                                             <span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>
                                                 {{ $item->created_at->diffForHumans() }}</span>
+                                                <span class="text-black text-capitalize mr-3"><i class="bi bi-clock"></i>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                                      </svg>
+                                                    {{ $item->date }}</span>
 
-
+          
 
                                         </div>
 
