@@ -11,6 +11,7 @@
                                 href="#"
                             >
                                 <svg
+                                    @click="toggle"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="30"
                                     height="30"
@@ -73,17 +74,23 @@
             <!--//container-fluid-->
         </div>
         <!--//app-header-inner-->
-        <div id="app-sidepanel" class="app-sidepanel">
+        <div
+         
+            class="app-sidepanel"
+         
+            :class="[isActive ? activeClass : 'sidepanel-visible']"
+
+        >
             <div id="sidepanel-drop" class="sidepanel-drop"></div>
             <div class="sidepanel-inner d-flex flex-column">
                 <a
                     href="#"
-                    id="sidepanel-close"
+                    @click="toggle"
                     class="sidepanel-close d-xl-none"
                     >&times;</a
                 >
                 <div class="app-branding">
-                  <span class="logo-text">Admin Paneli</span>
+                    <span class="logo-text">Admin Paneli</span>
                 </div>
                 <!--//app-branding-->
 
@@ -94,7 +101,7 @@
                     >
                         <li class="nav-item">
                             <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <router-link :to="{ name: 'admin-paneli'  }">
+                            <router-link :to="{ name: 'admin-paneli' }">
                                 <a class="nav-link active" href="#">
                                     <span class="nav-icon">
                                         <svg
@@ -250,24 +257,30 @@
 </template>
 
 <script>
-
-
 export default {
     props: ["users"],
-
-   
 
     data() {
         return {
             user: [],
+            isActive: true,
+            activeClass: '',
+           
+            // active: 'sidepanel-visible'
         };
     },
+    methods: {
+        toggle() {
+            if (!this.isActive) {
+                this.isActive = true;
+            } else {
+                this.isActive = false;
+            }
+            console.log(this.isActive);
+        },
+    },
 
-    created(){
-
-      console.log(this.users)
-     
-    }
+    created() {},
 };
 </script>
 
