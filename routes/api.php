@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Auth::routes();
+
 
 
 // Route::get('/bloglarim' , [BlogController::class, 'show']);

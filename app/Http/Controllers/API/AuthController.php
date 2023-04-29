@@ -87,10 +87,11 @@ class AuthController extends Controller
           }
       
 
-          return redirect()->back();
+       
     
           
            
       }
+      return redirect()->back();
      }
 }

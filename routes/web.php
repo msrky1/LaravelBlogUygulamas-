@@ -37,6 +37,7 @@ Route::get('/admin-paneli', function () {
 Auth::routes();
 Route::post('/auth/login' , [AuthController::class, 'login'])->name('auth.login');
 
+
 Route::post('/post' , [BlogController::class, 'store']);
 
 Route::get('/user/data' , [BlogController::class , 'userdata']);

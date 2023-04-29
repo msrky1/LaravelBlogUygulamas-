@@ -266,7 +266,7 @@ export default {
     methods: {
         allBlog() {
             let page =
-                "http://localhost:8000/api/all/blog/";
+                "/api/all/blog/";
 
             axios.get(page).then(({ data }) => {
                 console.log(data);
@@ -277,7 +277,7 @@ export default {
 
         updateBlog() {
             var editrecords =
-                "http://localhost:8000/api/update/" + this.blog.id;
+                "/api/update/" + this.blog.id;
             axios
                 .put(editrecords, this.blog)
 
@@ -302,7 +302,7 @@ export default {
         },
 
         remove(blog) {
-            var url = "http://localhost:8000/api/delete/" + blog.id;
+            var url = "/api/delete/" + blog.id;
 
             axios.delete(url);
 

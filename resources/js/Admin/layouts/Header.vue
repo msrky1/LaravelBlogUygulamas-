@@ -83,13 +83,7 @@
                     >&times;</a
                 >
                 <div class="app-branding">
-                    <a class="app-logo" href="/"
-                        ><img
-                            class="logo-icon mr-2"
-                            src="admin/assets/images/app-logo.svg"
-                            alt="logo"
-                        /><span class="logo-text">Admin Paneli</span></a
-                    >
+                  <span class="logo-text">Admin Paneli</span>
                 </div>
                 <!--//app-branding-->
 

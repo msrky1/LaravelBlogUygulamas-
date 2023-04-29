@@ -146,7 +146,7 @@ export default {
     methods: {
 
         blogView() {
-            let page = "http://localhost:8000/user/data" ;
+            let page = "/user/data" ;
 
             axios.get(page).then(({ data }) => {
                 console.log(data);
@@ -160,7 +160,7 @@ export default {
         },
         saveData() {
             axios
-                .post("./post" , this.blog)
+                .post("/post" , this.blog)
                 .then(({ data }) => {
                     alert("Blog Kaydedildi");
                 })

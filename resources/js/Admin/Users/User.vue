@@ -214,7 +214,7 @@ export default {
 
     methods: {
         userView() {
-            let page = "http://localhost:8000/api/user";
+            let page = "/api/user";
 
             axios.get(page).then(({ data }) => {
                 console.log(data);
@@ -232,7 +232,7 @@ export default {
         updateUser() {
             // console.log(users.id)
 
-            var editrecords = "http://localhost:8000/api/user/" + this.user.id;
+            var editrecords = "/api/user/" + this.user.id;
             axios
                 .put(editrecords, this.user)
 

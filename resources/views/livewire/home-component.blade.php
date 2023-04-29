@@ -100,12 +100,12 @@
                                         </div>
                                         <div class="g-margin-b-30--xs">
                                             <input type="email" class="form-control s-form-v3__input" name="email"
-                                                :value="old('email')" placeholder="* Email"  autofocus>
+                                                :value="old('email')" placeholder="* Email Adresinizi Giriniz"  autofocus>
                                         </div>
                                         
                                         <div class="g-margin-b-30--xs">
                                             <input type="password" class="form-control s-form-v3__input" name="password"
-                                                placeholder="* Password"  autocomplete="current-password">
+                                                placeholder="* Şifrenizi Giriniz"  autocomplete="current-password">
                                         </div>
                                         
                                         <div class="g-text-center--xs">
