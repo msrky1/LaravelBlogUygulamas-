@@ -16,21 +16,18 @@
                                 <form
                                     class="table-search-form row gx-1 align-items-center"
                                 >
-                                    <!-- <div class="col-auto">
-											<input type="text" id="search-orders" name="searchorders"
-												class="form-control search-orders" placeholder="Search">
-										</div> -->
+                                   
                                 </form>
                             </div>
-                            <!--//col-->
+                          
                         </div>
-                        <!--//row-->
+                        
                     </div>
-                    <!--//table-utilities-->
+                  
                 </div>
-                <!--//col-auto-->
+           
             </div>
-            <!--//row-->
+      
 
           
 
@@ -114,43 +111,18 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <!--//table-responsive-->
+                          
                         </div>
-                        <!--//app-card-body-->
+                    
                     </div>
 
               
-                    <!--//app-card-->
-                    <!-- <nav class="app-pagination">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a
-                                    class="page-link"
-                                    href="#"
-                                    tabindex="-1"
-                                    aria-disabled="true"
-                                    >Previous</a
-                                >
-                            </li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
-                    </nav> -->
-                    <!--//app-pagination-->
+                   
+         
                 </div>
-                <!--//tab-pane-->
+             
             </div>
-            <!--//tab-content-->
+          
 
             <div class="app-wrapper">
                 <div class="app-content pt-3 p-md-3 p-lg-4">
@@ -217,24 +189,24 @@
                                             </button>
                                         </form>
                                     </div>
-                                    <!--//app-card-body-->
+                                 
                                 </div>
-                                <!--//app-card-->
+                              
                             </div>
 
-                            <!--//row-->
+                
                             <hr class="my-4" />
                         </div>
 
-                        <!--//container-fluid-->
+                      
                     </div>
                 </div>
-                <!--//app-content-->
+            
             </div>
         </div>
-        <!--//container-fluid-->
+ 
     </div>
-    <!-- <blog-add :users = "user"/> -->
+
 </template>
 
 <script>

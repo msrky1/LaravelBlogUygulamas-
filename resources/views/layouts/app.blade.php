@@ -9,15 +9,15 @@
     <meta name="author" content="Xiaoying Riley at 3rd Wave Media" />
     <link rel="shortcut icon" href="favicon.ico" />
 
-    <!-- FontAwesome JS-->
+ 
 
 
-    <!-- CSRF Token -->
+   
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Blog Uygulaması</title>
 
-    <!-- Fonts -->
+    
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
@@ -28,7 +28,7 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
      
    
-    <!-- Scripts -->
+
     
 </head>
 <body>

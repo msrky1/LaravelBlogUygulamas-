@@ -8,6 +8,7 @@ use App\Models\Blog;
 use Carbon\Carbon;
 use DateTime;
 
+
 use Auth;
 
 class HomeComponent extends Component
@@ -18,6 +19,7 @@ class HomeComponent extends Component
    
     public function render()
     {
+      
         $tmp = (new DateTime)->format('Y-m-d'); 
         
         Carbon::setLocale('tr');

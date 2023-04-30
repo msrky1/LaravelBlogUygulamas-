@@ -5,7 +5,7 @@ import Home from '../components/Home.vue';
 import BlogAdd from '../Admin/Blog/BlogAdd.vue';
 import BlogAll from '../Admin/Blog/AllBlog.vue';
 import User from '../Admin/Users/User.vue';
-import Login from '../Admin/Auth/Login.vue';
+
 
 
 
@@ -33,16 +33,6 @@ const routes = [
 
 },
 
- {
-
-
-
-   path: '/login',
-   name: 'Login',
-   component: Login
-
-
-},
 
  
  {

@@ -1,10 +1,5 @@
 <main>
 
-    <!-- Header Start -->
-
-
-
-    <!-- Header Close -->
 
     <div class="main-wrapper ">
         <section class="page-title bg-1">
@@ -33,11 +28,11 @@
                         @foreach ($blog as $item)
                             <div class="col-lg-6 col-md-6 mb-5">
                                 <div class="blog-item">
-                                    {{-- <img src="images/blog/1.jpg" alt="" class="img-fluid rounded"> --}}
+                                 
 
                                     <div class="blog-item-content bg-white p-5">
                                         <div class="blog-item-meta bg-gray py-1 px-2">
-                                            {{-- <span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>Creativity</span> --}}
+                                           
                                             <span class="text-muted text-capitalize mr-3"><i
                                                     class="ti-comment mr-2"></i>Yorumlar: {{ $item->comments()->count()}}</span>
                                             <span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i>
@@ -170,7 +165,7 @@
     </div>
     </section>
 
-    <!-- footer Start -->
+
 
 
     </div>

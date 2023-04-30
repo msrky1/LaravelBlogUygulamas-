@@ -16,35 +16,19 @@
                                 <form
                                     class="table-search-form row gx-1 align-items-center"
                                 >
-                                    <!-- <div class="col-auto">
-                     <input type="text" id="search-orders" name="searchorders"
-                       class="form-control search-orders" placeholder="Search">
-                   </div> -->
+                   
                                 </form>
                             </div>
-                            <!--//col-->
+                       
                         </div>
-                        <!--//row-->
+                      
                     </div>
-                    <!--//table-utilities-->
+                
                 </div>
-                <!--//col-auto-->
+           
             </div>
-            <!--//row-->
+       
 
-            <!-- <nav id="orders-table-tab"
-         class="orders-table-tab app-nav-tabs nav shadow-sm flex-column flex-sm-row mb-4">
-         <a class="flex-sm-fill text-sm-center nav-link active" id="orders-all-tab" data-toggle="tab"
-           href="#orders-all" role="tab" aria-controls="orders-all" aria-selected="true">All</a>
-         <a class="flex-sm-fill text-sm-center nav-link" id="orders-paid-tab" data-toggle="tab"
-           href="#orders-paid" role="tab" aria-controls="orders-paid" aria-selected="false">Paid</a>
-         <a class="flex-sm-fill text-sm-center nav-link" id="orders-pending-tab" data-toggle="tab"
-           href="#orders-pending" role="tab" aria-controls="orders-pending"
-           aria-selected="false">Pending</a>
-         <a class="flex-sm-fill text-sm-center nav-link" id="orders-cancelled-tab" data-toggle="tab"
-           href="#orders-cancelled" role="tab" aria-controls="orders-cancelled"
-           aria-selected="false">Cancelled</a>
-       </nav> -->
 
             <div class="tab-content" id="orders-table-tab-content">
                 <div
@@ -161,34 +145,34 @@
                                                             </button>
                                                         </form>
                                                     </div>
-                                                    <!--//app-card-body-->
+                                               
                                                 </div>
-                                                <!--//app-card-->
+                                     
                                             </div>
 
-                                            <!--//row-->
+                                
                                             <hr class="my-4" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!--//table-responsive-->
+                      
                         </div>
-                        <!--//app-card-body-->
+                    
                     </div>
-                    <!--//app-card-->
+              
 
-                    <!--//app-pagination-->
+              
                 </div>
-                <!--//tab-pane-->
+              
             </div>
-            <!--//tab-content-->
+
 
             <div class="app-wrapper">
-                <!--//app-content-->
+      
             </div>
         </div>
-        <!--//container-fluid-->
+    
     </div>
 </template>
 
@@ -226,11 +210,11 @@ export default {
         edit(user) {
             this.user = user;
             this.isActive = true;
-            console.log(this.isActive);
+     
         },
 
         updateUser() {
-            // console.log(users.id)
+          
 
             var editrecords = "/api/user/" + this.user.id;
             axios

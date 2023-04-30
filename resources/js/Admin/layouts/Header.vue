@@ -29,15 +29,13 @@
                                 </svg>
                             </a>
                         </div>
-                        <!--//col-->
+                       
                         <div class="search-mobile-trigger d-sm-none col">
                             <i
                                 class="search-mobile-trigger-icon fas fa-search"
                             ></i>
                         </div>
-                        <!--//col-->
-
-                        <!--//app-search-box-->
+                       
 
                         <div class="app-utilities col-auto">
                             <div
@@ -52,28 +50,22 @@
                                     aria-expanded="false"
                                     title="Notifications"
                                 >
-                                    <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                                  
 
                                     {{ users.name }} </a
-                                ><!--//dropdown-toggle-->
-
-                                <!--//dropdown-menu-->
+                                >
                             </div>
-                            <!--//app-utility-item-->
-
-                            <!--//app-utility-item-->
-
-                            <!--//app-user-dropdown-->
+                          
                         </div>
-                        <!--//app-utilities-->
+                       
                     </div>
-                    <!--//row-->
+                 
                 </div>
-                <!--//app-header-content-->
+             
             </div>
-            <!--//container-fluid-->
+      
         </div>
-        <!--//app-header-inner-->
+       
         <div
          
             class="app-sidepanel"
@@ -92,7 +84,7 @@
                 <div class="app-branding">
                     <span class="logo-text">Admin Paneli</span>
                 </div>
-                <!--//app-branding-->
+             
 
                 <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
                     <ul
@@ -100,7 +92,7 @@
                         id="menu-accordion"
                     >
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                           
                             <router-link :to="{ name: 'admin-paneli' }">
                                 <a class="nav-link active" href="#">
                                     <span class="nav-icon">
@@ -125,12 +117,12 @@
                                     <span class="nav-link-text"
                                         >Anasayfa</span
                                     > </a
-                                ><!--//nav-link--></router-link
+                                ></router-link
                             >
                         </li>
-                        <!--//nav-item-->
+                      
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                     
                             <router-link
                                 :props="user.name"
                                 :to="`/blog/${users.id}`"
@@ -158,10 +150,10 @@
                                 </a></router-link
                             >
                         </li>
-                        <!--//nav-item-->
+                      
                         <router-link :to="{ name: 'blog-all' }">
                             <li class="nav-item" v-if="users.status == 'admin'">
-                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                               
                                 <a class="nav-link" href="orders.html">
                                     <span class="nav-icon">
                                         <svg
@@ -188,12 +180,12 @@
                                     <span class="nav-link-text"
                                         >Tüm Yazılar</span
                                     > </a
-                                ><!--//nav-link-->
+                                >
                             </li>
                         </router-link>
                         <router-link :to="{ name: 'users' }">
                             <li class="nav-item" v-if="users.status == 'admin'">
-                                <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+                               
                                 <a class="nav-link" href="orders.html">
                                     <span class="nav-icon">
                                         <svg
@@ -220,39 +212,29 @@
                                     <span class="nav-link-text"
                                         >Kullanıcılar</span
                                     > </a
-                                ><!--//nav-link-->
+                                >
                             </li>
                         </router-link>
-                        <!--//nav-item-->
+                      
 
-                        <!--//nav-item-->
-
-                        <!--//nav-item-->
-
-                        <!--//nav-item-->
-
-                        <!--//nav-item-->
+                       
                     </ul>
-                    <!--//app-menu-->
+                   
                 </nav>
-                <!--//app-nav-->
+             
                 <div class="app-sidepanel-footer">
                     <nav class="app-nav app-nav-footer">
                         <ul class="app-menu footer-menu list-unstyled">
-                            <!--//nav-item-->
-
-                            <!--//nav-item-->
-
-                            <!--//nav-item-->
+                          
                         </ul>
-                        <!--//footer-menu-->
+                   
                     </nav>
                 </div>
-                <!--//app-sidepanel-footer-->
+             
             </div>
-            <!--//sidepanel-inner-->
+     
         </div>
-        <!--//app-sidepanel-->
+    
     </header>
 </template>
 
@@ -266,7 +248,7 @@ export default {
             isActive: true,
             activeClass: '',
            
-            // active: 'sidepanel-visible'
+      
         };
     },
     methods: {
@@ -276,11 +258,11 @@ export default {
             } else {
                 this.isActive = false;
             }
-            console.log(this.isActive);
+         
         },
     },
 
-    created() {},
+
 };
 </script>
 
